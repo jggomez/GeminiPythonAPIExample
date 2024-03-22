@@ -1,0 +1,43 @@
+repos:
+    - repo: meta
+      hooks:
+        - id: check-useless-excludes
+
+    # reorder Python imports
+    - repo: https://github.com/asottile/reorder_python_imports
+      rev: v3.9.0
+      hooks:
+        - id: reorder-python-imports
+
+    # format Python code with black
+    - repo: https://github.com/psf/black
+      rev: 23.3.0
+      hooks:
+        - id: black
+
+    # static type checking with mypy
+    - repo: https://github.com/pre-commit/mirrors-mypy
+      rev: v1.7.1
+      hooks:
+        - id: mypy
+
+    # Python linter
+    - repo: https://github.com/charliermarsh/ruff-pre-commit
+      rev: v0.0.259
+      hooks:
+        - id: ruff
+          args: ['--ignore=E501',
+                '--per-file-ignores=__init__.py:F401']
+
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v4.4.0
+      hooks:
+        - id: check-added-large-files
+        - id: debug-statements
+        - id: end-of-file-fixer
+        - id: trailing-whitespace
+        - id: check-ast
+        - id: check-builtin-literals
+        - id: mixed-line-ending
+        - id: no-commit-to-branch
+          args: [--branch, develop]

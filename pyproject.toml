@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "backend-service-questionanswers"
+version = "1.0.0"
+description = ""
+authors = ["Juan Guillermo <juan@wordbox.ai>"]
+readme = "README.md"
+packages = [{include = "backend_service_questionanswers"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+google-cloud-aiplatform = "^1.43.0"
+google-cloud-storage = "^2.15.0"
+pypdf2 = "^3.0.1"
+fastapi = "^0.110.0"
+uvicorn = "^0.29.0"
+firebase-admin = "^6.5.0"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.2"
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
